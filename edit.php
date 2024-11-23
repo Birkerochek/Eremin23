@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" name="password" placeholder="Новый пароль">
     <button type="submit" >Обновить</button>
 </form>
-<p>Вы сейчас под именем <?php echo $_SESSION['username'] ?></p>
+<p>Вы сейчас под именем <?php echo $_SESSION['user_id'] ?></p>
 </body>
 </html>
 
