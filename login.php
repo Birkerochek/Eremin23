@@ -16,12 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             session_start();
             $_SESSION['user_id'] = $user['id'];
+            
         } else {
             echo 'Неверный пароль';
         }
     } else {
         echo 'Пользователь не найден';
     }
+    
 }
 ?>
 <!DOCTYPE html>
@@ -37,12 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button onclick="document.location.href = '/login.php'" class="headerLink">Авторизация</button>
         <button onclick="document.location.href = '/edit.php'" class="headerLink">Редактирование</button>
         <button onclick="document.location.href = '/admin.php'" class="headerLink">Админка</button>
+        <button onclick="document.location.href = '/create_post.php'" class="headerLink">Создать пост</button>
+        <button onclick="document.location.href = '/posts_view.php'" class="headerLink">Все посты</button>
     </header>
     <h2>Авторизация</h2>
 <form method="POST">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Пароль" required>
     <button type="submit" name="login">Войти</button>
+    <button onclick = "document.location.href = '/password_recovery.php'">Забыли пароль?</button>
 </form>
 </body>
 </html>
